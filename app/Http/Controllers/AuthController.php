@@ -29,7 +29,7 @@ class AuthController extends Controller
         return response()->json(['user' => $user, 'token' => $token], 201);
     }
 
-     // Funcion para registrar usuario desde la web y mostrar modal
+     // Funcion para registrar usuario desde la web
     public function registerWeb(Request $request)
     {
         $request->validate([
@@ -44,7 +44,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        // Redirige con variable de sesión para mostrar el modal
+        //
         return redirect()->back()->with('usuario_creado', true);
     }
 
