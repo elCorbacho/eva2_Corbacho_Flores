@@ -19,27 +19,16 @@
   ```bash
   php artisan migrate
   ```
-6. *(Opcional)* **Instala las dependencias frontend:**
-  ```bash
-  npm install && npm run dev
-  ```
-7. **Inicia el servidor:**
+6. **Inicia el servidor:**
   ```bash
   php artisan serve
   ```
-## Seeders y Factories
+## Seeders 
  - Ejecuta los seeders para poblar la base de datos:
   ```bash
   php artisan db:seed
   ```
- - Ejecuta un seeder específico:
-  ```bash
-  php artisan db:seed --class=NombreDelSeeder
-  ```
- - Crear un factory para un modelo:
-  ```bash
-  php artisan make:factory NombreDelFactory --model=NombreDelModelo
-  ```
+
 
 ##  Uso Web
 Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:8000/proyectos).
