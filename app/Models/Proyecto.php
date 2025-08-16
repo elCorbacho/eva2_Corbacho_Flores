@@ -8,6 +8,5 @@ class Proyecto extends Model
     use HasFactory;
 
     protected $fillable = ['nombre', 'fecha_inicio', 'estado', 'responsable', 'monto', 'created_by'];
-    // protected $table = 'proyectos'; // Descomenta si tu tabla tiene un nombre diferente
 }
 

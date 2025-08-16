@@ -29,6 +29,25 @@ class AuthController extends Controller
         return response()->json(['user' => $user, 'token' => $token], 201);
     }
 
+     // Funcion para registrar usuario desde la web y mostrar modal
+    public function registerWeb(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6'
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+        // Redirige con variable de sesión para mostrar el modal
+        return redirect()->back()->with('usuario_creado', true);
+    }
+
 
     
     // Funcion para iniciar sesión y devolver el token JWT

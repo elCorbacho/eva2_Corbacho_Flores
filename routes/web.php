@@ -82,4 +82,4 @@ Route::get('/register', function () {
 });
 
     // Ruta para procesar el registro de usuario (POST)
-Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'registerWeb'])->name('register');

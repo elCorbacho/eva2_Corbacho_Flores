@@ -41,15 +41,17 @@ class ProyectoController extends Controller
 //Funcion  POST para crear un nuevo proyecto
     public function post(Request $request)
     {
-        $proyecto = new Proyecto();
-        $proyecto->nombre = $request->input('nombre');
-        $proyecto->fecha_inicio = $request->input('fecha_inicio');
-        $proyecto->estado = $request->input('estado');
-        $proyecto->responsable = $request->input('responsable');
-        $proyecto->monto = $request->input('monto');
-        $proyecto->save();
+    $proyecto = new Proyecto();
+    $proyecto->nombre = $request->input('nombre');
+    $proyecto->fecha_inicio = $request->input('fecha_inicio');
+    $proyecto->estado = $request->input('estado');
+    $proyecto->responsable = $request->input('responsable');
+    $proyecto->monto = $request->input('monto');
+    // Asignar el usuario autenticado si existe
+    $proyecto->created_by = auth()->id() ?? 1;
+    $proyecto->save();
 
-        return redirect()->back()->with('proyecto_creado', $proyecto);
+    return redirect()->back()->with('proyecto_creado', $proyecto);
     }
 
 
