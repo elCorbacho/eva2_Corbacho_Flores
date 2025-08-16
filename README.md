@@ -1,5 +1,5 @@
 # 15-eval1-api-migrate-db-test
-## 🚀 Instalación y configuración
+##  Instalación y configuración
 1. **Instala las dependencias PHP:**
   ```bash
   composer install
@@ -27,7 +27,7 @@
   ```bash
   php artisan serve
   ```
-## 🧑‍💻 Seeders y Factories
+## Seeders y Factories
  - Ejecuta los seeders para poblar la base de datos:
   ```bash
   php artisan db:seed
@@ -41,13 +41,13 @@
   php artisan make:factory NombreDelFactory --model=NombreDelModelo
   ```
 
-## 🌐 Uso Web
+##  Uso Web
 Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:8000/proyectos).
 
-## 📡 Endpoints principales
+##  Endpoints principales
 
 ### **Endpoints API** (`routes/api.php`)
-| 🌐 Método  | 📍 Endpoint                   | 📝 Descripción                        |
+|  Método  |  Endpoint                   |  Descripción                        |
 |------------|------------------------------|---------------------------------------|
 | **POST**   | `/api/login`                 | Iniciar sesión y obtener token JWT    |
 | **POST**   | `/api/register`              | Registrar un nuevo usuario            |
@@ -59,7 +59,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
 | **GET**    | `/api/user`                  | Obtener usuario autenticado (JWT)     |
 > **Nota:** Todos los endpoints API están activos en `routes/api.php` y utilizan el prefijo `/api`.
 ### **Endpoints Web** (`routes/web.php`)
-| 🌐 Método  | 📍 Endpoint                  | 📝 Descripción                        |
+|  Método  |  Endpoint                  |  Descripción                        |
 |------------|-----------------------------|---------------------------------------|
 | **GET**    | `/`                         | Página principal (redirección a proyectos) |
 | **GET**    | `/proyectos`                | Listar todos los proyectos            |
@@ -77,7 +77,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
 | **GET**    | `/register`                 | Formulario de registro de usuario     |
 | **POST**   | `/register`                 | Procesar registro de usuario          |
 
-## 🔒 Autenticación JWT y uso en Postman
+##  Autenticación JWT y uso en Postman
 1. **Registro de usuario:**
   - Método: POST
   - URL: `http://localhost:8000/api/register`
@@ -123,7 +123,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
   }
   ```
 
-## 🛠️ Ejemplo de uso de seeders y factories
+##  Ejemplo de uso de seeders y factories
 - Ejecuta un seeder de usuarios:
   ```bash
   php artisan db:seed --class=users
@@ -133,7 +133,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
   php artisan db:seed --class=proyectos_factory
   ```
 
-## 📂 Estructura principal
+##  Estructura principal
 - `app/Models/Proyecto.php` — Modelo Eloquent para proyectos
 - `app/Models/User.php` — Modelo Eloquent para usuarios
 - `database/migrations/` — Migraciones de base de datos
