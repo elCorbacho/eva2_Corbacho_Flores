@@ -8,9 +8,11 @@
   ```bash
   cp .env.example .env
   ```
-3. **Genera la clave de la aplicación:**
+3. **Genera la clave de la aplicación y de JWT:**
   ```bash
   php artisan key:generate
+
+  php artisan jwt:secret
   ```
 4. **Configura la base de datos en el archivo `.env`.**
 5. **Ejecuta las migraciones:**
@@ -38,9 +40,12 @@
   ```bash
   php artisan make:factory NombreDelFactory --model=NombreDelModelo
   ```
+
 ## 🌐 Uso Web
 Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:8000/proyectos).
+
 ## 📡 Endpoints principales
+
 ### **Endpoints API** (`routes/api.php`)
 | 🌐 Método  | 📍 Endpoint                   | 📝 Descripción                        |
 |------------|------------------------------|---------------------------------------|
@@ -71,6 +76,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
 | **POST**   | `/login`                    | Procesar inicio de sesión             |
 | **GET**    | `/register`                 | Formulario de registro de usuario     |
 | **POST**   | `/register`                 | Procesar registro de usuario          |
+
 ## 🔒 Autenticación JWT y uso en Postman
 1. **Registro de usuario:**
   - Método: POST
@@ -84,6 +90,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
   }
   ```
   - Recibirás un token JWT en la respuesta.
+
 2. **Login:**
   - Método: POST
   - URL: `http://localhost:8000/api/login`
@@ -95,6 +102,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
   }
   ```
   - Recibirás un token JWT en la respuesta.
+
 3. **Usar el token en endpoints protegidos:**
   - Agrega el header:
   ```
@@ -114,6 +122,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
   "message": "Proyecto eliminado correctamente"
   }
   ```
+
 ## 🛠️ Ejemplo de uso de seeders y factories
 - Ejecuta un seeder de usuarios:
   ```bash
@@ -123,6 +132,7 @@ Accede a la aplicación en [http://localhost:8000/proyectos](http://localhost:80
   ```bash
   php artisan db:seed --class=proyectos_factory
   ```
+
 ## 📂 Estructura principal
 - `app/Models/Proyecto.php` — Modelo Eloquent para proyectos
 - `app/Models/User.php` — Modelo Eloquent para usuarios
