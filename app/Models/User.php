@@ -53,17 +53,13 @@ class User extends Authenticatable implements JWTSubject
      * @return string
      */
 
-    //funcion para obtener el identificador que se almacenará en el reclamo del sujeto del JWT.
     public function getJWTIdentifier(): string
     {
         return (string) $this->getKey();
     }
 
-    //función para obtener las reclamaciones personalizadas del JWT.
     public function getJWTCustomClaims(): array
     {
         return [];
     }
-
-
 }
