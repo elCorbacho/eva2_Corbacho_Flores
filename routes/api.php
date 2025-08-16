@@ -10,14 +10,11 @@ use App\Http\Controllers\AuthController;
 //    return $request->user();
 //})->middleware('auth:sanctum');
 
-
 //RUTA LOG IN
 Route::post('/login', [AuthController::class, 'loginApi']);
 
-
 //RUTA REGISTRO
 Route::post('/register', [AuthController::class, 'register']);
-
 
 //PROTECCION DE RUTAS CON MIDDLEWARE JWT
 Route::middleware(['auth:api'])->group(function () {
