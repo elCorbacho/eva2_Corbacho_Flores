@@ -12,6 +12,9 @@ class users extends Seeder
      */
     public function run(): void
     {
+        // Elimina todos los usuarios antes de sembrar para evitar duplicados
+        \App\Models\User::truncate();
+
         $usuarios = [
             [
                 'name' => 'Andrés Corbacho',

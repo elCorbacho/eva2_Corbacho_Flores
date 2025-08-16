@@ -39,6 +39,9 @@ class ProyectoControllerApi extends Controller
             'monto' => 'required|numeric|min:0',
         ]);
 
+        // Agregar el id del usuario autenticado como created_by
+        $validatedData['created_by'] = auth()->id();
+
         // Crear el nuevo proyecto en la base de datos
         $proyecto = Proyecto::create($validatedData);
 

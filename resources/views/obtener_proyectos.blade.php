@@ -14,6 +14,7 @@
             <th>Estado</th>
             <th>Responsable</th>
             <th>Monto</th>
+            <th>Creado por (ID)</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
             <td>{{ $proyecto['estado'] }}</td>
             <td>{{ $proyecto['responsable'] }}</td>
             <td>{{ $proyecto['monto'] }}</td>
+            <td>{{ $proyecto['created_by'] }}</td>
         </tr>
     @endforeach
     </tbody>

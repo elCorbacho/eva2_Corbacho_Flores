@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('estado');
             $table->string('responsable');
             $table->decimal('monto', 15, 2);
+            $table->unsignedBigInteger('created_by')->nullable();
             $table->timestamps();
         });
     }
